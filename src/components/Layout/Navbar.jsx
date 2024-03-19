@@ -6,6 +6,7 @@ import Listitem from './Listitem'
 import Flex from './Flex'
 import { Link } from 'react-router-dom'
 import { TiThMenu } from "react-icons/ti";
+import { IoMdClose } from "react-icons/io";
 function Navbar() {
   const[menubar,setMenubar]=useState( true)
   let handle_menu=()=>{
@@ -24,15 +25,19 @@ window.addEventListener('resize', navMenu)
   },[])
   return (
     <div>
-      <nav className=' bg-white py-4'>
+      <nav className=' bg-white '>
 
         <Container>
         <Flex>
         <Image src='public/images/Logo.png' alt="Logo"/>
-        <TiThMenu onClick={handle_menu} className=' md:hidden absolute top-8 right-4'/>
+        {menubar ?
+        <IoMdClose onClick={handle_menu} className=' md:hidden absolute top-4 right-4 text-xl' />
+        :
+        <TiThMenu onClick={handle_menu} className=' md:hidden absolute top-4 right-4 text-xl'/>
+        }
  {menubar && 
  
-        <List className=' rounded-[10px] w-full md:flex gap-10 bg-slate-400 md:w-auto md:static md:bg-transparent absolute left-0 pl-6'>
+        <List className='pl-4 mt-3 rounded-[10px] w-full md:flex gap-10 bg-slate-400 md:w-auto md:static md:bg-transparent absolute left-0 sm:pl-6'>
             <Listitem className='py-3' > <Link className='text-white md:text-color_2 font-dmsans font-normal text-[14px] hover:font-bold hover:text-color_1'>Home</Link></Listitem>
             <Listitem className='py-3'> <Link className='text-white md:text-color_2 font-dmsans font-normal text-[14px] hover:font-bold hover:text-color_1'>Shop</Link></Listitem>
             <Listitem className='py-3'> <Link className='text-white md:text-color_2 font-dmsans font-normal text-[14px] hover:font-bold hover:text-color_1'>About</Link></Listitem>
@@ -42,7 +47,14 @@ window.addEventListener('resize', navMenu)
         </List>
      
  }
+ <div>
+  <Flex className='gap-5'>
+    <Link className=' hover:text-color_1 text-color_2 hidden md:block font-dmsans font-bold text-[14px]'>EN</Link>
+    <Link className=' hover:text-color_1 text-color_2 hidden md:block font-dmsans font-bold text-[14px]'>RU</Link>
+  </Flex>
+ </div>
         </Flex>
+        
         </Container>
       </nav>
     </div>

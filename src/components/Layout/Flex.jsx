@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Flex({children}) {
+function Flex({children,className,onClick,dref}) {
   return (
-    <div className=' md:px-10 py-4 px-7 md:flex justify-between items-center '>{children}</div>
+    <div ref={dref} onClick={onClick}  className= {` py-4 md:flex justify-between items-center ${className}`}>{children}</div>
   )
 }
 
