@@ -1,10 +1,10 @@
 import React, { Children } from 'react'
 
-function List({children,className}) {
+function List({children,className,dref}) {
   return (
     <div>
 
-      <ul className={className}>{children}</ul>
+      <ul ref={dref} className={className}>{children}</ul>
     </div>
   )
 }
