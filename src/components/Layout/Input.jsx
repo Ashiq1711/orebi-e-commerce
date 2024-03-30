@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Input({className}) {
+function Input({className,type,placeholder}) {
   return (
-    <input className={className} type="text" placeholder='Search Products' />
+  <input className={className} type={type} placeholder={placeholder} />
   )
 }
 

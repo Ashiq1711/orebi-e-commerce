@@ -25,8 +25,8 @@ function Header_Navbar() {
   useEffect(() => {
     document.addEventListener("click", function (e) {
       if (categoryRef.current.contains(e.target)) {
-        setCategotyItem(true);
-      } else {
+        setCategotyItem(!categoryItem);
+      } else  {
         setCategotyItem(false);
       }
       if (accountRef.current.contains(e.target)) {
@@ -44,13 +44,14 @@ function Header_Navbar() {
 
   return (
     <div>
-      <header className="bg-[#979797]">
+      <header className="bg-[#979797] relative z-40">
         <Container>
-          <Flex className=" justify-between">
+          <Flex className=" justify-between py-2 md:py-4">
             <Flex
+            
               dref={categoryRef}
               // onClick={handle_category}
-              className="items-center   relative"
+              className="items-center py-4  relative"
             >
               <HiOutlineMenuAlt2 className="cursor-pointer text-xl" />
               <p className=" hidden md:block text-[14px] pl-3 text-color_1 select-none font-bold cursor-pointer">
@@ -94,9 +95,9 @@ function Header_Navbar() {
               )}
             </Flex>
             
-            <div className=" relative w-[600px] px-6 md:px-0">
-              <Input className=" w-full h-[50px] border-none pl-4 outline-none rounded-md placeholder:hidden"  />
-              <FaSearch className=" absolute top-4 md:right-4 right-8 text-xl" />
+            <div className=" relative px-6 w-[600px] md:px-0">
+              <Input className=" h-[40px] md:h-[50px] w-full  border-none pl-4 outline-none rounded-md" type="text" placeholder='Search Products'  />
+              <FaSearch className=" absolute top-3 md:right-4 right-8 text-xl" />
             </div>
             <Flex className="md:gap-5 gap-2">
               <div ref={accountRef} className="flex items-center relative">

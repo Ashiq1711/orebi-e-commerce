@@ -27,7 +27,7 @@ function Navbar() {
     <div>
       <nav className=" bg-white z-50 relative">
         <Container>
-          <Flex>
+          <Flex className='py-4'>
             <Link>
               <Image src="public/images/Logo.png" alt="Logo" />
             </Link>
@@ -43,34 +43,34 @@ function Navbar() {
               />
             )}
             {menubar && (
-              <List className="pl-4 mt-3 rounded-[10px] w-full md:flex gap-10 bg-slate-400 md:w-auto md:static md:bg-transparent absolute left-0 sm:pl-6">
+              <List className="pl-4 mt-3 rounded-[10px] w-full md:flex gap-10 bg-color_1 md:w-auto md:static md:bg-transparent absolute left-0 sm:pl-6">
                 <Listitem className="py-3">
                   {" "}
-                  <Link className="text-white md:text-color_2 font-dmsans font-normal text-[14px] hover:font-bold hover:text-color_1">
+                  <Link className="text-white md:text-color_2 font-dmsans font-normal text-[14px] hover:font-bold ">
                     Home
                   </Link>
                 </Listitem>
                 <Listitem className="py-3">
                   {" "}
-                  <Link className="text-white md:text-color_2 font-dmsans font-normal text-[14px] hover:font-bold hover:text-color_1">
+                  <Link className="text-white md:text-color_2 font-dmsans font-normal text-[14px] hover:font-bold ">
                     Shop
                   </Link>
                 </Listitem>
                 <Listitem className="py-3">
                   {" "}
-                  <Link className="text-white md:text-color_2 font-dmsans font-normal text-[14px] hover:font-bold hover:text-color_1">
+                  <Link className="text-white md:text-color_2 font-dmsans font-normal text-[14px] hover:font-bold ">
                     About
                   </Link>
                 </Listitem>
                 <Listitem className="py-3">
                   {" "}
-                  <Link className="text-white md:text-color_2 font-dmsans font-normal text-[14px] hover:font-bold hover:text-color_1">
+                  <Link className="text-white md:text-color_2 font-dmsans font-normal text-[14px] hover:font-bold ">
                     Contacts
                   </Link>
                 </Listitem>
                 <Listitem className="py-3">
                   {" "}
-                  <Link className="text-white md:text-color_2 font-dmsans font-normal text-[14px] hover:font-bold hover:text-color_1">
+                  <Link className="text-white md:text-color_2 font-dmsans font-normal text-[14px] hover:font-bold ">
                     Journal
                   </Link>
                 </Listitem>
