@@ -26,29 +26,28 @@ function Header_Navbar() {
     document.addEventListener("click", function (e) {
       if (categoryRef.current.contains(e.target)) {
         setCategotyItem(!categoryItem);
-      } else  {
+      } else {
         setCategotyItem(false);
       }
       if (accountRef.current.contains(e.target)) {
-        setAccount(true);
+        setAccount(!account);
       } else {
         setAccount(false);
       }
       if (cartRef.current.contains(e.target)) {
-        setCart(true);
+        setCart(!cart);
       } else {
         setCart(false);
       }
     });
-  }, []);
+  }, [categoryItem,account,cart]);
 
   return (
     <div>
       <header className="bg-[#979797] relative z-40">
         <Container>
-          <Flex className=" justify-between py-2 md:py-4">
+          <Flex className=" justify-between px-4 lg:px-0 py-2 md:py-4">
             <Flex
-            
               dref={categoryRef}
               // onClick={handle_category}
               className="items-center py-4  relative"
@@ -94,9 +93,13 @@ function Header_Navbar() {
                 </List>
               )}
             </Flex>
-            
+
             <div className=" relative px-6 w-[600px] md:px-0">
-              <Input className=" h-[40px] md:h-[50px] w-full  border-none pl-4 outline-none rounded-md" type="text" placeholder='Search Products'  />
+              <Input
+                className=" h-[40px] md:h-[50px] w-full  border-none pl-4 outline-none rounded-md"
+                type="text"
+                placeholder="Search Products"
+              />
               <FaSearch className=" absolute top-3 md:right-4 right-8 text-xl" />
             </div>
             <Flex className="md:gap-5 gap-2">
@@ -105,8 +108,8 @@ function Header_Navbar() {
                 {account ? <FaCaretDown /> : <GoTriangleUp />}
                 {account && (
                   <List className="absolute top-6 right-0 mt-3 w-[200px] bg-white shadow-xl ">
-                    <Listitem className=" border-b bg-white hover:bg-color_1 hover:text-white   text-center">
-                      <Link className=" inline-block   text-color_1 hover:text-white  text-[14px] font-dmsans  font-semibold  pl-6 py-4  ">
+                    <Listitem className=" border-color_2 hovet:border-b text-center hover:bg-color_1 hover:text-white w-full">
+                      <Link className=" inline-block text-[14px] font-dmsans  font-semibold pl-6 py-4  ">
                         My Account
                       </Link>
                     </Listitem>

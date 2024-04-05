@@ -27,7 +27,7 @@ function Navbar() {
     <div>
       <nav className=" bg-white z-50 relative">
         <Container>
-          <Flex className='py-4'>
+          <Flex className='py-4 px-4 xl:px-0'>
             <Link>
               <Image src="public/images/Logo.png" alt="Logo" />
             </Link>
@@ -52,8 +52,8 @@ function Navbar() {
                 </Listitem>
                 <Listitem className="py-3">
                   {" "}
-                  <Link className="text-white md:text-color_2 font-dmsans font-normal text-[14px] hover:font-bold ">
-                    Shop
+                  <Link to='/products' className="text-white md:text-color_2 font-dmsans font-normal text-[14px] hover:font-bold ">
+                  Products
                   </Link>
                 </Listitem>
                 <Listitem className="py-3">

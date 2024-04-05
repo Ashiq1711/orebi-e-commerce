@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Slider from "react-slick";
 import Image from "./Image";
+import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 function Banner() {
   let [active, setActive] = useState(0);
@@ -94,41 +94,39 @@ function Banner() {
   return (
     <section>
       <Slider {...settings}>
-        <div>
+        
           <Image
             className=" w-full "
             src="public/images/banner.png"
             alt="banner"
           />
-        </div>
-        <div>
+       
+    
           <Image
             className=" w-full"
             src="public/images/banner.png"
             alt="banner"
           />
-        </div>
-        <div>
+        
+       
           <Image
             className=" w-full"
             src="public/images/banner.png"
             alt="banner"
           />
-        </div>
-        <div>
+       
           <Image
             className=" w-full"
             src="public/images/banner.png"
             alt="banner"
           />
-        </div>
-        <div>
+      
           <Image
             className=" w-full"
             src="public/images/banner.png"
             alt="banner"
           />
-        </div>
+      
       </Slider>
     </section>
   );
