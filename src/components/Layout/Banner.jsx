@@ -97,33 +97,33 @@ function Banner() {
         
           <Image
             className=" w-full "
-            src="public/images/banner.png"
+            src="images/banner.png"
             alt="banner"
           />
        
     
           <Image
             className=" w-full"
-            src="public/images/banner.png"
+            src="images/banner.png"
             alt="banner"
           />
         
        
           <Image
             className=" w-full"
-            src="public/images/banner.png"
+            src="images/banner.png"
             alt="banner"
           />
        
           <Image
             className=" w-full"
-            src="public/images/banner.png"
+            src="images/banner.png"
             alt="banner"
           />
       
           <Image
             className=" w-full"
-            src="public/images/banner.png"
+            src="images/banner.png"
             alt="banner"
           />
       

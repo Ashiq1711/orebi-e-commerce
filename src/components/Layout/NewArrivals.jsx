@@ -11,15 +11,11 @@ function NewArrivals() {
     const { className, style, onClick } = props;
     return (
       <div
-      className={`${className} !bg-transparent `}
-        style={{
+      className={`${className} !bg-transparent lg:!w-10 lg:!h-10 lg:!bg-slate-400 `}
+      style={{
           ...style,
           display: "block",
-          background: "#979797",
-          width: "40px",
-          height: "40px",
           borderRadius:"50%",
-
           position: "absolute",
           top: "50%",
           right: "0%",
@@ -37,13 +33,10 @@ function NewArrivals() {
     const { className, style, onClick } = props;
     return (
       <div
-        className={`${className} !bg-transparent `}
+        className={`${className} !bg-transparent lg:!w-10 lg:!h-10 lg:!bg-slate-400 `}
         style={{
           ...style,
           display: "block",
-          background: "#979797",
-          width: "40px",
-          height: "40px",
           borderRadius:"50%",
           position: "absolute",
           top: "50%",
@@ -94,11 +87,11 @@ function NewArrivals() {
       <Container>
         <Title title="New Arrivals" />
         <Slider  {...settings}>
-          <Products pimage="public/images/p1.png" isnew={true} />
-          <Products pimage="public/images/p1.png" isnew={true} />
-          <Products pimage="public/images/p1.png" isnew={true} />
-          <Products pimage="public/images/p1.png" isnew={true} />
-          <Products pimage="public/images/p1.png" isnew={false} />
+          <Products pimage="images/p1.png" isnew={true} />
+          <Products pimage="images/p1.png" isnew={true} />
+          <Products pimage="images/p1.png" isnew={true} />
+          <Products pimage="images/p1.png" isnew={true} />
+          <Products pimage="images/p1.png" isnew={false} />
         </Slider>
       </Container>
     </section>

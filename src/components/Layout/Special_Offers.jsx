@@ -11,7 +11,7 @@ function Special_Offers() {
     <Title title="Special Offers"/>
     <Flex className=' flex-wrap md:flex-nowrap w-full '>
 
-      <Products pimage="public/images/p1.png" isnew={true} />
+      <Products pimage="images/p1.png" isnew={true} />
       
 </Flex>
     </Container>

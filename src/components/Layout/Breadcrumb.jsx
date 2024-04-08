@@ -2,7 +2,7 @@ import React from 'react'
 import { LiaAngleRightSolid } from "react-icons/lia";
 import { Link } from 'react-router-dom';
 function Breadcrumb() {
-    console.log();
+  
   return (
     <div>
         <h1 className=' font-bold text-[50px] mt-[124px] capitalize'>{window.location.pathname.slice(1 )}</h1>

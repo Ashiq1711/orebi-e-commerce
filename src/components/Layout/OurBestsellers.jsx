@@ -12,10 +12,10 @@ function OurBestsellers() {
           title="Our Bestsellers"
         />
         <Flex className=' flex-wrap md:flex-nowrap w-full '>
-          <Products pimage="public/images/p1.png" isnew={true} />
-          <Products pimage="public/images/p1.png" isnew={true} />
-          <Products pimage="public/images/p1.png" isnew={true} />
-          <Products pimage="public/images/p1.png" isnew={true} />
+          <Products pimage="images/p1.png" isnew={true} />
+          <Products pimage="images/p1.png" isnew={true} />
+          <Products pimage="images/p1.png" isnew={true} />
+          <Products pimage="images/p1.png" isnew={true} />
         </Flex>
       </Container>
     </section>

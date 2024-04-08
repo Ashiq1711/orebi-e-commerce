@@ -110,7 +110,7 @@ function Footer() {
           </div>
           <div className=" mx-0 md:mx-auto">
       <Link>
-      <Image src='public/images/OREBI©.png' alt='logo'/>
+      <Image src='images/OREBI©.png' alt='logo'/>
       </Link>
           </div>
           

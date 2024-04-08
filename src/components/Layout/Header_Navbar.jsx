@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import Input from "./Input";
 import { FaSearch } from "react-icons/fa";
 import { ImUser } from "react-icons/im";
-import { FaShoppingCart } from "react-icons/fa";
+import { FaShoppingCart, FaAngleRight } from "react-icons/fa";
 import { FaCaretDown } from "react-icons/fa";
 import { GoTriangleUp } from "react-icons/go";
 import Image from "./Image";
@@ -40,7 +40,7 @@ function Header_Navbar() {
         setCart(false);
       }
     });
-  }, [categoryItem,account,cart]);
+  }, [categoryItem, account, cart]);
 
   return (
     <div>
@@ -58,37 +58,43 @@ function Header_Navbar() {
               </p>
               {categoryItem && (
                 <List className=" absolute top-12 left-0 mt-2 w-[263px] bg-color_1">
-                  <Listitem className="border-color_2 border-b">
+                  <Listitem className="border-color_2 border-b flex items-center justify-between">
                     <Link className=" inline-block hover:ml-3  text-white  text-[14px] font-dmsans hover:font-bold font-normal pl-6 py-4 duration-200 ">
                       Accesories
                     </Link>
+                    <FaAngleRight className=" text-white mr-3" />
                   </Listitem>
-                  <Listitem className="border-color_2 border-b">
+                  <Listitem className="border-color_2 border-b flex items-center justify-between">
                     <Link className=" inline-block hover:ml-3  text-white  text-[14px] font-dmsans hover:font-bold font-normal pl-6 py-4 duration-200 ">
                       Furniture
                     </Link>
+                    <FaAngleRight className=" text-white mr-3" />
                   </Listitem>
-                  <Listitem className="border-color_2 border-b">
+                  <Listitem className="border-color_2 border-b flex items-center justify-between">
                     <Link className=" inline-block hover:ml-3  text-white  text-[14px] font-dmsans hover:font-bold font-normal pl-6 py-4 duration-200 ">
                       Electronics
                     </Link>
+                    <FaAngleRight className=" text-white mr-3" />
                   </Listitem>
-                  <Listitem className="border-color_2 border-b">
+                  <Listitem className="border-color_2 border-b flex items-center justify-between">
                     <Link className=" inline-block hover:ml-3  text-white  text-[14px] font-dmsans hover:font-bold font-normal pl-6 py-4 duration-200 ">
                       Clothes
                     </Link>
+                    <FaAngleRight className=" text-white mr-3" />
                   </Listitem>
 
-                  <Listitem className="border-color_2 border-b">
+                  <Listitem className="border-color_2 border-b flex items-center justify-between">
                     <Link className=" inline-block hover:ml-3  text-white  text-[14px] font-dmsans hover:font-bold font-normal pl-6 py-4 duration-200 ">
                       Bags
                     </Link>
+                    <FaAngleRight className=" text-white mr-3" />
                   </Listitem>
 
-                  <Listitem className="border-color_2 border-b">
+                  <Listitem className="border-color_2 border-b flex items-center justify-between">
                     <Link className=" inline-block hover:ml-3  text-white  text-[14px] font-dmsans hover:font-bold font-normal pl-6 py-4 duration-200 ">
                       Home appliances
                     </Link>
+                    <FaAngleRight className=" text-white mr-3" />
                   </Listitem>
                 </List>
               )}

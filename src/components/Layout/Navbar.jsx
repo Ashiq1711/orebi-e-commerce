@@ -4,7 +4,7 @@ import Container from "./Container";
 import List from "./List";
 import Listitem from "./Listitem";
 import Flex from "./Flex";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { TiThMenu } from "react-icons/ti";
 import { IoMdClose } from "react-icons/io";
 function Navbar() {
@@ -29,7 +29,7 @@ function Navbar() {
         <Container>
           <Flex className='py-4 px-4 xl:px-0'>
             <Link>
-              <Image src="public/images/Logo.png" alt="Logo" />
+              <Image src="images/Logo.png" alt="Logo" />
             </Link>
             {menubar ? (
               <IoMdClose
@@ -46,33 +46,33 @@ function Navbar() {
               <List className="pl-4 mt-3 rounded-[10px] w-full md:flex gap-10 bg-color_1 md:w-auto md:static md:bg-transparent absolute left-0 sm:pl-6">
                 <Listitem className="py-3">
                   {" "}
-                  <Link className="text-white md:text-color_2 font-dmsans font-normal text-[14px] hover:font-bold ">
+                  <NavLink className="text-white md:text-color_2 font-dmsans font-normal text-[14px] hover:font-bold ">
                     Home
-                  </Link>
+                  </NavLink>
                 </Listitem>
                 <Listitem className="py-3">
                   {" "}
-                  <Link to='/products' className="text-white md:text-color_2 font-dmsans font-normal text-[14px] hover:font-bold ">
+                  <NavLink to='/products' className="text-white md:text-color_2 font-dmsans font-normal text-[14px] hover:font-bold ">
                   Products
-                  </Link>
+                  </NavLink>
                 </Listitem>
                 <Listitem className="py-3">
                   {" "}
-                  <Link className="text-white md:text-color_2 font-dmsans font-normal text-[14px] hover:font-bold ">
+                  <NavLink to='/about' className="text-white md:text-color_2 font-dmsans font-normal text-[14px] hover:font-bold ">
                     About
-                  </Link>
+                  </NavLink>
                 </Listitem>
                 <Listitem className="py-3">
                   {" "}
-                  <Link className="text-white md:text-color_2 font-dmsans font-normal text-[14px] hover:font-bold ">
+                  <NavLink to='/contact' className="text-white md:text-color_2 font-dmsans font-normal text-[14px] hover:font-bold ">
                     Contacts
-                  </Link>
+                  </NavLink>
                 </Listitem>
                 <Listitem className="py-3">
                   {" "}
-                  <Link className="text-white md:text-color_2 font-dmsans font-normal text-[14px] hover:font-bold ">
+                  <NavLink to='/jurnal' className="text-white md:text-color_2 font-dmsans font-normal text-[14px] hover:font-bold ">
                     Journal
-                  </Link>
+                  </NavLink>
                 </Listitem>
               </List>
             )}

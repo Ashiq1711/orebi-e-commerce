@@ -6,7 +6,7 @@ function Phone_of_the_year() {
   return ( 
     <Container >
 <Link>
-<Image className=' mt-10 md:mt-[130px]' src='public/images/Ads_2.png' alt='ads_2'/>
+<Image className=' mt-10 md:mt-[130px]' src='images/Ads_2.png' alt='ads_2'/>
 </Link>
     </Container>
   )
