@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Container from "./Container";
 import Title from "./Title";
 import Products from "./Products";
@@ -6,26 +6,29 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { FaArrowRightLong } from "react-icons/fa6";
+import axios from "axios";
 function NewArrivals() {
   function SampleNextArrow(props) {
     const { className, style, onClick } = props;
     return (
       <div
-      className={`${className} !bg-transparent lg:!w-10 lg:!h-10 lg:!bg-slate-400 `}
-      style={{
+        className={`${className} !bg-transparent lg:!w-10 lg:!h-10 lg:!bg-slate-400 `}
+        style={{
           ...style,
           display: "block",
-          borderRadius:"50%",
+          borderRadius: "50%",
           position: "absolute",
           top: "50%",
           right: "0%",
           zIndex: "999",
-          display:"flex",
-          alignItems:'center',
-          justifyContent:"center"
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
         }}
         onClick={onClick}
-      ><FaArrowRightLong  className=" text-xl text-white"/></div>
+      >
+        <FaArrowRightLong className=" text-xl text-white" />
+      </div>
     );
   }
 
@@ -37,18 +40,18 @@ function NewArrivals() {
         style={{
           ...style,
           display: "block",
-          borderRadius:"50%",
+          borderRadius: "50%",
           position: "absolute",
           top: "50%",
           left: "-2%",
           zIndex: "999",
-          display:"flex",
-          alignItems:'center',
-          justifyContent:"center"
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
         }}
         onClick={onClick}
       >
-        <FaArrowLeftLong className=" text-xl text-white"/>
+        <FaArrowLeftLong className=" text-xl text-white" />
       </div>
     );
   }
@@ -66,32 +69,38 @@ function NewArrivals() {
         settings: {
           slidesToShow: 4,
           slidesToScroll: 1,
-      
-        }
+        },
       },
       {
-        breakpoint:480,
+        breakpoint: 480,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
           initialSlide: 1,
-          
-        }
-        
+        },
       },
-      
-    ]
+    ],
   };
+
+  let [pAPI,setPAPI]=useState([])
+  useEffect(() => {
+    function getAPI() {
+      axios.get("https://dummyjson.com/products").then((data)=>{
+        setPAPI(data.data.products)
+      })
+    }
+    getAPI()
+  }, []);
   return (
     <section className=" mt-10 md:mt-[108px]">
       <Container>
         <Title title="New Arrivals" />
-        <Slider  {...settings}>
-          <Products pimage="images/p1.png" isnew={true} />
-          <Products pimage="images/p1.png" isnew={true} />
-          <Products pimage="images/p1.png" isnew={true} />
-          <Products pimage="images/p1.png" isnew={true} />
-          <Products pimage="images/p1.png" isnew={false} />
+        <Slider {...settings}>
+          {pAPI.map((item)=>(
+
+          <Products pimage={item.thumbnail} isnew={true} />
+          ))}
+
         </Slider>
       </Container>
     </section>
