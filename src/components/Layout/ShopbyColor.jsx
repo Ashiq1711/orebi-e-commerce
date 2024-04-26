@@ -3,12 +3,12 @@ import { FaAngleUp, FaAngleDown } from "react-icons/fa";
 
 import ColorCategory from "./ColorCategory";
 function ShopbyColor() {
-  let [colorShow, setColorShow] = useState(false);
+  let [colorShow, setColorShow] = useState(true);
   return (
     <div className="">
       <button
         onClick={() => setColorShow(!colorShow)}
-        className="mt-10 w-full flex items-center justify-between"
+        className="mt-10  w-full flex items-center justify-between"
       >
         <h1 className=" font-bold texe-[20px]  ">Shop by Color</h1>
         {colorShow ? <FaAngleDown /> : <FaAngleUp />}

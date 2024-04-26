@@ -3,7 +3,7 @@ import { FaAngleUp, FaAngleDown } from "react-icons/fa";
 import BrandCategory from './BrandCategory';
 
 function ShopbyBrand() {
-    let [brandcategory,setBrandcategory]=useState(false)
+    let [brandcategory,setBrandcategory]=useState(true)
   return (
     <div>
        
@@ -11,7 +11,7 @@ function ShopbyBrand() {
       onClick={()=>setBrandcategory(!brandcategory)}
         className="mt-10 w-full flex items-center justify-between"
       >
-        <h1 className=" font-bold texe-[20px]  ">Shop by Color</h1>
+        <h1 className=" font-bold texe-[20px]  ">Shop by Brand</h1>
         {brandcategory ?
         <FaAngleDown /> 
         :

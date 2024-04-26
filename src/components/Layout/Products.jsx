@@ -7,7 +7,6 @@ import { IoReloadCircle } from "react-icons/io5";
 
 
 function Products({ pimage, isnew,pInfo }) {
-console.log(pInfo)
   return (
     <section className=" mt-12">
       <Container>
@@ -45,7 +44,7 @@ console.log(pInfo)
             )}
             <Flex className="mt-6 mb-2">
               <h2 className="font-bold font-dmsans  text-color_1">
-                {pInfo ? pInfo.title : 'Basic Crew Neck Tee'}
+                {pInfo ? pInfo.title.substring(0,32) : 'Basic Crew Neck Tee'}. . . .
               </h2>
               <h3 className=" font-dmsans font-normal text-base text-color_2">
                 $ {pInfo ? pInfo.price : '454'}
