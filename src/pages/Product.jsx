@@ -36,7 +36,7 @@ const [perPage,setPerPage]=useState(6)
           <ShopbyBrand />
           <ShopbyPrice/>
         </div>
-        <div className=" w-[80%]">
+        <div className=" w-full px-3 md:px-0 md:w-[80%]">
           <div className=" flex-wrap md:flex-nowrap px-3 md:px-0 flex justify-between items-center">
             <div className=" flex items-center gap-4">
               <div className="p-3 border flex items-center justify-center bg-black text-white hover:bg-white hover:text-black hover:duration-300">
