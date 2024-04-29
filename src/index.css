@@ -5,3 +5,8 @@
 body{
     font-family: "DM Sans", sans-serif !important;
 }
+
+ul li a.active{
+    font-weight: 700;
+    color: black;
+}

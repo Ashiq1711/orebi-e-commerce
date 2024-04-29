@@ -46,7 +46,7 @@ function Navbar() {
               <List className="pl-4 mt-3 rounded-[10px] w-full md:flex gap-10 bg-color_1 md:w-auto md:static md:bg-transparent absolute left-0 sm:pl-6">
                 <Listitem className="py-3">
                   {" "}
-                  <NavLink className="text-white md:text-color_2 font-dmsans font-normal text-[14px] hover:font-bold ">
+                  <NavLink  className="text-white md:text-color_2 font-dmsans font-normal text-[14px] hover:font-bold ">
                     Home
                   </NavLink>
                 </Listitem>

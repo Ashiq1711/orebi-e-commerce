@@ -114,14 +114,14 @@ function Header_Navbar() {
                 {account ? <FaCaretDown /> : <GoTriangleUp />}
                 {account && (
                   <List className="absolute top-6 right-0 mt-3 w-[200px] bg-white shadow-xl ">
-                    <Listitem className=" border-color_2 hovet:border-b text-center hover:bg-color_1 hover:text-white w-full">
-                      <Link className=" inline-block text-[14px] font-dmsans  font-semibold pl-6 py-4  ">
+                    <Listitem className=" border-color_2 hovet:border-b text-center hover:bg-color_1 hover:text-white">
+                      <Link to='/signup' className="  inline-block text-[14px] font-dmsans  font-semibold py-4  ">
                         My Account
                       </Link>
                     </Listitem>
-                    <Listitem className="border-color_2 hovet:border-b text-center hover:bg-color_1 hover:text-white w-full">
-                      <Link className=" inline-block text-[14px] font-dmsans  font-semibold pl-6 py-4  ">
-                        Log Out
+                    <Listitem className="border-color_2 hovet:border-b text-center hover:bg-color_1 hover:text-white ">
+                      <Link to='/login' className=" inline-block text-[14px] font-dmsans  font-semibold py-4  ">
+                        Log In
                       </Link>
                     </Listitem>
                   </List>
@@ -130,11 +130,11 @@ function Header_Navbar() {
               <div ref={cartRef} className=" relative">
                 <FaShoppingCart className="text-xl cursor-pointer" />
                 {cart && (
-                  <div className=" shadow-2xl rounded-md w-[360px] h-[240px]  absolute top-12 right-0">
+                  <div className=" bg-white shadow-2xl rounded-md w-[360px] h-[240px]  absolute top-12 right-0">
                     <div>
                       <Flex className=" p-5 bg-[#979797]">
                         <Image
-                          src="public/images/Screenshot_2.png"
+                          src="images/Screenshot_2.png"
                           alt="screenshort"
                         />
                         <div>
@@ -145,7 +145,7 @@ function Header_Navbar() {
                             $44.00
                           </p>
                         </div>
-                        <IoCloseSharp className="text-2xl" />
+                        <IoCloseSharp className="text-2xl bg-white rounded-full hover:text-red-500 cursor-pointer" />
                       </Flex>
                     </div>
                     <div className=" bg-white">
