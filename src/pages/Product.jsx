@@ -6,36 +6,37 @@ import ShopbyColor from "../components/Layout/ShopbyColor";
 import ShopbyBrand from "../components/Layout/ShopbyBrand";
 import { AiOutlineAppstore } from "react-icons/ai";
 import { AiOutlineBars } from "react-icons/ai";
-import Products from "../components/Layout/Products";
-import Flex from "../components/Layout/Flex";
 import axios from "axios";
 import Pagination from "../components/Layout/Pagination";
 import ShopbyPrice from "../components/Layout/ShopbyPrice";
 function Product() {
-  let [dummyProducts,setDummyProducts]=useState([])
-  useEffect(()=>{
-function getProducts(){
-  axios.get('https://dummyjson.com/products').then((data)=>{
-    setDummyProducts(data.data.products)
-  })
-}
-getProducts()
-  },[])
+  let [dummyProducts, setDummyProducts] = useState([]);
+  useEffect(() => {
+    function getProducts() {
+      axios
+        .get("http://localhost:3000/api/v1/product/getallproduct")
+        .then((data) => {
+          setDummyProducts(data.data.allProduct);
+        });
+    }
+    getProducts();
+  }, []);
 
-const [perPage,setPerPage]=useState(6)
-  let handle_per_page=(e)=>{
-    setPerPage(e.target.value)
-  }
+  const [perPage, setPerPage] = useState(6);
+  let handle_per_page = (e) => {
+    setPerPage(e.target.value);
+  };
   return (
     <Container>
       <Breadcrumb />
       <div className="mt-[130px] flex flex-wrap md:flex-nowrap gap-10">
-        <div className="w-full px-3 md:px-0 md:w-[20%]">
+        <div className="  w-full px-3 md:px-0 md:w-[20%]">
           <ShopbyCategory />
           <ShopbyColor />
           <ShopbyBrand />
-          <ShopbyPrice/>
+          <ShopbyPrice />
         </div>
+        {/* <button className=" px-6 py-2 border">Filter</button> */}
         <div className=" w-full px-3 md:px-0 md:w-[80%]">
           <div className=" flex-wrap md:flex-nowrap px-3 md:px-0 flex justify-between items-center">
             <div className=" flex items-center gap-4">
@@ -73,7 +74,8 @@ const [perPage,setPerPage]=useState(6)
                 >
                   Show:
                 </label>
-                <select onChange={handle_per_page}
+                <select
+                  onChange={handle_per_page}
                   className=" ml-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm 
                   rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[140px] p-2.5 dark:bg-gray-700
                    dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500
@@ -87,20 +89,9 @@ const [perPage,setPerPage]=useState(6)
               </div>
             </div>
           </div>
-          {/* ======================Products Start=================== */}  
-          <Pagination itemsPerPage={perPage} dummyProducts={dummyProducts}/>
-          {/* <Flex className=' flex-wrap '>
-       {dummyProducts.map((pitem)=>(
-        <div>
+          {/* ======================Products Start=================== */}
+          <Pagination itemsPerPage={perPage} allProducts={dummyProducts&& dummyProducts} />
 
-          <Products pInfo={pitem} pimage={pitem.thumbnail} isnew={true} />
-        </div>
-
-       ))}
-
-
-          </Flex> */}
-          {/* ======================Products End=================== */}
         </div>
       </div>
     </Container>

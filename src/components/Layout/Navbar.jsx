@@ -24,12 +24,12 @@ function Navbar() {
     window.addEventListener("resize", navMenu);
   }, []);
   return (
-    <div>
-      <nav className=" bg-white z-50 relative">
+    <div  >
+      <nav className=" bg-white z-50 fixed top-0 w-full shadow-md">
         <Container>
           <Flex className='py-4 px-4 xl:px-0'>
-            <Link>
-              <Image src="images/Logo.png" alt="Logo" />
+            <Link to={"/"}>
+              <Image src="public/images/Logo.png" alt="Logo" />
             </Link>
             {menubar ? (
               <IoMdClose
@@ -43,34 +43,34 @@ function Navbar() {
               />
             )}
             {menubar && (
-              <List className="pl-4 mt-3 rounded-[10px] w-full md:flex gap-10 bg-color_1 md:w-auto md:static md:bg-transparent absolute left-0 sm:pl-6">
-                <Listitem className="py-3">
+              <List className="pl-4 mt-3 rounded-[10px] w-full md:flex gap-10 bg-color_2 md:w-auto md:static md:bg-transparent absolute left-0 sm:pl-6">
+                <Listitem className="py-3 ">
                   {" "}
-                  <NavLink  className="text-white md:text-color_2 font-dmsans font-normal text-[14px] hover:font-bold ">
+                  <NavLink className="text-white  md:text-color_2 font-dmsans  text-[14px] hover:text-color_1 font-bold ">
                     Home
                   </NavLink>
                 </Listitem>
-                <Listitem className="py-3">
+                <Listitem className="py-3 ">
                   {" "}
-                  <NavLink to='/products' className="text-white md:text-color_2 font-dmsans font-normal text-[14px] hover:font-bold ">
+                  <NavLink to='/products' className="text-white md:text-color_2 font-dmsans  hover:text-color_1 text-[14px] font-bold ">
                   Products
                   </NavLink>
                 </Listitem>
                 <Listitem className="py-3">
                   {" "}
-                  <NavLink to='/about' className="text-white md:text-color_2 font-dmsans font-normal text-[14px] hover:font-bold ">
+                  <NavLink to='/about' className="text-white md:text-color_2 font-dmsans  hover:text-color_1 text-[14px] font-bold ">
                     About
                   </NavLink>
                 </Listitem>
                 <Listitem className="py-3">
                   {" "}
-                  <NavLink to='/contact' className="text-white md:text-color_2 font-dmsans font-normal text-[14px] hover:font-bold ">
+                  <NavLink to='/contact' className="text-white md:text-color_2 font-dmsans hover:text-color_1  text-[14px] font-bold ">
                     Contacts
                   </NavLink>
                 </Listitem>
                 <Listitem className="py-3">
                   {" "}
-                  <NavLink to='/jurnal' className="text-white md:text-color_2 font-dmsans font-normal text-[14px] hover:font-bold ">
+                  <NavLink to='/jurnal' className="text-white md:text-color_2 font-dmsans  hover:text-color_1 text-[14px] font-bold ">
                     Journal
                   </NavLink>
                 </Listitem>

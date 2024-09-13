@@ -13,10 +13,12 @@ import { FaCaretDown } from "react-icons/fa";
 import { GoTriangleUp } from "react-icons/go";
 import Image from "./Image";
 import { IoCloseSharp } from "react-icons/io5";
+import axios from "axios";
 function Header_Navbar() {
   let [categoryItem, setCategotyItem] = useState(false);
   let [account, setAccount] = useState(false);
   let [cart, setCart] = useState(false);
+  let [categoryList, setCategoryList] = useState([]);
 
   let categoryRef = useRef();
   let accountRef = useRef();
@@ -41,10 +43,17 @@ function Header_Navbar() {
       }
     });
   }, [categoryItem, account, cart]);
+useEffect(()=>{
 
+axios.get('http://localhost:3000/api/v1/category/getallcategory').then((data)=>{
+  setCategoryList(data.data)
+}).catch((err)=>{
+  console.log(err)
+})
+},[])
   return (
     <div>
-      <header className="bg-[#979797] relative z-40">
+      <header className="bg-[#979797]  top-0 w-full mt-[90px] z-40">
         <Container>
           <Flex className=" justify-between px-4 lg:px-0 py-2 md:py-4">
             <Flex
@@ -52,50 +61,22 @@ function Header_Navbar() {
               // onClick={handle_category}
               className="items-center py-4  relative"
             >
-              <HiOutlineMenuAlt2 className="cursor-pointer text-xl" />
+              <HiOutlineMenuAlt2 className="cursor-pointer text-xl " />
               <p className=" hidden md:block text-[14px] pl-3 text-color_1 select-none font-bold cursor-pointer">
                 Shop by Category
               </p>
               {categoryItem && (
-                <List className=" absolute top-12 left-0 mt-2 w-[263px] bg-color_1">
-                  <Listitem className="border-color_2 border-b flex items-center justify-between">
-                    <Link className=" inline-block hover:ml-3  text-white  text-[14px] font-dmsans hover:font-bold font-normal pl-6 py-4 duration-200 ">
-                      Accesories
-                    </Link>
-                    <FaAngleRight className=" text-white mr-3" />
-                  </Listitem>
-                  <Listitem className="border-color_2 border-b flex items-center justify-between">
-                    <Link className=" inline-block hover:ml-3  text-white  text-[14px] font-dmsans hover:font-bold font-normal pl-6 py-4 duration-200 ">
-                      Furniture
-                    </Link>
-                    <FaAngleRight className=" text-white mr-3" />
-                  </Listitem>
-                  <Listitem className="border-color_2 border-b flex items-center justify-between">
-                    <Link className=" inline-block hover:ml-3  text-white  text-[14px] font-dmsans hover:font-bold font-normal pl-6 py-4 duration-200 ">
-                      Electronics
-                    </Link>
-                    <FaAngleRight className=" text-white mr-3" />
-                  </Listitem>
-                  <Listitem className="border-color_2 border-b flex items-center justify-between">
-                    <Link className=" inline-block hover:ml-3  text-white  text-[14px] font-dmsans hover:font-bold font-normal pl-6 py-4 duration-200 ">
-                      Clothes
-                    </Link>
-                    <FaAngleRight className=" text-white mr-3" />
-                  </Listitem>
+                <List className=" z-40 absolute top-12 left-0 mt-2 w-[263px] bg-color_1">
+                 {categoryList.map((item)=>(
 
                   <Listitem className="border-color_2 border-b flex items-center justify-between">
                     <Link className=" inline-block hover:ml-3  text-white  text-[14px] font-dmsans hover:font-bold font-normal pl-6 py-4 duration-200 ">
-                      Bags
+                    {item.name}
                     </Link>
                     <FaAngleRight className=" text-white mr-3" />
                   </Listitem>
-
-                  <Listitem className="border-color_2 border-b flex items-center justify-between">
-                    <Link className=" inline-block hover:ml-3  text-white  text-[14px] font-dmsans hover:font-bold font-normal pl-6 py-4 duration-200 ">
-                      Home appliances
-                    </Link>
-                    <FaAngleRight className=" text-white mr-3" />
-                  </Listitem>
+                 ))}
+        
                 </List>
               )}
             </Flex>
@@ -113,14 +94,20 @@ function Header_Navbar() {
                 <ImUser className="text-xl cursor-pointer" />
                 {account ? <FaCaretDown /> : <GoTriangleUp />}
                 {account && (
-                  <List className="absolute top-6 right-0 mt-3 w-[200px] bg-white shadow-xl ">
+                  <List className="z-40 absolute top-6 right-0 mt-3 w-[200px] bg-white shadow-xl ">
                     <Listitem className=" border-color_2 hovet:border-b text-center hover:bg-color_1 hover:text-white">
-                      <Link to='/signup' className="  inline-block text-[14px] font-dmsans  font-semibold py-4  ">
+                      <Link
+                        to="/signup"
+                        className="  inline-block text-[14px] font-dmsans  font-semibold py-4  "
+                      >
                         My Account
                       </Link>
                     </Listitem>
                     <Listitem className="border-color_2 hovet:border-b text-center hover:bg-color_1 hover:text-white ">
-                      <Link to='/login' className=" inline-block text-[14px] font-dmsans  font-semibold py-4  ">
+                      <Link
+                        to="/login"
+                        className=" inline-block text-[14px] font-dmsans  font-semibold py-4  "
+                      >
                         Log In
                       </Link>
                     </Listitem>
