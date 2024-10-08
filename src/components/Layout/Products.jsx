@@ -7,7 +7,6 @@ import { IoReloadCircle } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
 function Products({ pimage, isnew, pInfo }) {
-  console.log(pInfo);
 
   return (
     <section className=" mt-12">

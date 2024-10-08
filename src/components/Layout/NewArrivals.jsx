@@ -8,8 +8,16 @@ import { FaArrowLeftLong } from "react-icons/fa6";
 import { FaArrowRightLong } from "react-icons/fa6";
 import axios from "axios";
 function NewArrivals() {
+  const [allproduct, setAllproduct] = useState([])
   function SampleNextArrow(props) {
     const { className, style, onClick } = props;
+    useEffect(()=>{
+axios.get('http://localhost:3000/api/v1/product/getallproduct').then((data)=>{
+  console.log(data.data.allProduct)
+}).catch((err)=>{
+  console.log(err)
+})
+    },[])
     return (
       <div
         className={`${className} !bg-transparent lg:!w-10 lg:!h-10 lg:!bg-slate-400 `}

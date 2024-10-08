@@ -18,7 +18,6 @@ function Banner() {
     arrows: false,
 
     responsive: [
-      
       {
         breakpoint: 600,
         settings: {
@@ -100,14 +99,13 @@ axios.get("http://localhost:3000/api/v1/banner/getbanner").then((data)=>{
   console.log(err)
 })
   },[])
-  console.log(getbanner)
   return (
     <section>
       <Slider {...settings}>
         {getbanner.map((item)=>(
 
           <Image
-            className=" w-full "
+            className=" w-full h-[720px] "
             src={item.image}
             alt="banner"
           />

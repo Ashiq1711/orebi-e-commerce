@@ -1,7 +1,9 @@
 import axios from "axios";
 import React, { useRef, useState } from "react";
 import { IoClose } from "react-icons/io5";
-const ReviewModal = ({ onClose,productdetail }) => {
+import Rating from '@mui/material/Rating';
+import Stack from '@mui/material/Stack';
+const ReviewModal = ({ onClose,productdetail,refresh }) => {
   const [message, setMessage] = useState();
   const [rating, setRating] = useState();
 
@@ -21,6 +23,7 @@ const ReviewModal = ({ onClose,productdetail }) => {
       reviewBy:productdetail.ownerid,
     });
     onClose()
+    refresh(prv=>!prv)
   };
 
   return (
@@ -65,20 +68,11 @@ const ReviewModal = ({ onClose,productdetail }) => {
                   required="name is require"
                 />
               </div>
+      
               <div>
-                <label
-                  htmlFor="text"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                >
-                  Review Rating
-                </label>
-                <input
-                  onChange={(e) => setRating(e.target.value)}
-                  type="number"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                  placeholder="Inter your rating"
-                  required="name is require"
-                />
+  <Stack spacing={1}>
+      <Rating  onChange={(e) => setRating(e.target.value)} name="half-rating" defaultValue={0} precision={0.5} />
+    </Stack>
               </div>
 
               <button

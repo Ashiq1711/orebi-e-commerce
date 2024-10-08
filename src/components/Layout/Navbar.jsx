@@ -7,6 +7,7 @@ import Flex from "./Flex";
 import { Link, NavLink } from "react-router-dom";
 import { TiThMenu } from "react-icons/ti";
 import { IoMdClose } from "react-icons/io";
+import logo from "../../../public/images/Logo.png"
 function Navbar() {
   const [menubar, setMenubar] = useState(true);
   let handle_menu = () => {
@@ -27,9 +28,10 @@ function Navbar() {
     <div  >
       <nav className=" bg-white z-50 fixed top-0 w-full shadow-md">
         <Container>
+          
           <Flex className='py-4 px-4 xl:px-0'>
             <Link to={"/"}>
-              <Image src="public/images/Logo.png" alt="Logo" />
+              <Image src={logo} alt="Logo" />
             </Link>
             {menubar ? (
               <IoMdClose
@@ -43,10 +45,10 @@ function Navbar() {
               />
             )}
             {menubar && (
-              <List className="pl-4 mt-3 rounded-[10px] w-full md:flex gap-10 bg-color_2 md:w-auto md:static md:bg-transparent absolute left-0 sm:pl-6">
+              <List className="pl-4 mt-3 rounded-[10px] w-full md:flex gap-10  md:w-auto md:static md:bg-transparent absolute left-0 sm:pl-6">
                 <Listitem className="py-3 ">
                   {" "}
-                  <NavLink className="text-white  md:text-color_2 font-dmsans  text-[14px] hover:text-color_1 font-bold ">
+                  <NavLink to='/' className="text-white  md:text-color_2 font-dmsans  text-[14px] hover:text-color_1 font-bold ">
                     Home
                   </NavLink>
                 </Listitem>

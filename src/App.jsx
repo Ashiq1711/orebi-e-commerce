@@ -30,6 +30,7 @@ import AddCategory from "./Admin/AddCategory";
 import UpdateCategory from "./Admin/UpdateCategory";
 import ErrorPage from "./components/Layout/ErrorPage";
 import CartPage from "./pages/CartPage";
+import CheckoutPage from "./pages/CheckoutPage";
 
 
 
@@ -50,6 +51,7 @@ const router = createBrowserRouter(
       <Route path="/changepassword/:token" element={<Changepassword/>}></Route>
       <Route path="/changepassword/:token" element={<Changepassword/>}></Route>
       <Route path="/addtocart" element={<CartPage/>}></Route>
+      <Route path="/checkout" element={<CheckoutPage/>}></Route>
     </Route>
 
 

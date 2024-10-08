@@ -1,7 +1,7 @@
 import React, { createRef, useEffect, useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
-
+import toast, { Toaster } from 'react-hot-toast';
 import axios from "axios";
 import { useSelector } from "react-redux";
 function AddProducts() {
@@ -39,6 +39,7 @@ function AddProducts() {
       .catch((error) => {
         console.log(error);
       });
+      toast.success('Successfully toasted!')
   };
   useEffect(() => {
     function getCategory() {
@@ -66,6 +67,7 @@ function AddProducts() {
   }, []);
   return (
     <div class="p-4">
+      <Toaster position="top-center" reverseOrder={false} />
       <div class="flex gap-3 w-[1800px]">
         <div class="w-2/3 p-5 bg-white rounded-3xl">
           <h1 className="mb-5 text-3xl font-bold">Product Description</h1>
@@ -155,14 +157,14 @@ function AddProducts() {
 
                 <div>
                   <input
-                  onChange={(e)=>setImageurl(e.target.files[0])}
+                    onChange={(e) => setImageurl(e.target.files[0])}
                     className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer"
                     id="multiple_files"
                     type="file"
                     multiple
-                  /> 
-                  
-                  <img src={imageurl&&URL.createObjectURL(imageurl)} alt="" />
+                  />
+
+                  <img src={imageurl && URL.createObjectURL(imageurl)} alt="" />
                 </div>
               </div>
             </div>

@@ -12,7 +12,6 @@ function Items({ currentItems }) {
         currentItems.map((item) => (
        
           <div>
-           { console.log(item)}
              <Products pInfo={item} pimage={item.image} id={item._id} isnew={true} />
           </div>
         ))}
